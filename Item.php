@@ -36837,6 +36837,7 @@ LEFT JOIN table_cases as cs ON cs.case_id = icr.case_id', "icr.item_id,cs.case_s
                         $flag = false;
 
                     }
+                   
 
                 }
 
@@ -36865,19 +36866,6 @@ LEFT JOIN table_cases as cs ON cs.case_id = icr.case_id', "icr.item_id,cs.case_s
                     if (is_array($mapRec) && (count($mapRec) > 0)) {
                         $updateFlg = 1;
                         $mappingId = $mapRec[0]->mapping_id;
-                        /*$strErr .= "Error in Row" . $row . " ," . $arrFile[0] . "," . $arrFile[1] . " ," . $arrFile[2] . "  ,Price already exists in the system. \n";
-                        $str_err_array = array($strErr);
-                        $flag = false;
-                        */
-
-                    }
-
-                }
-
-
-                if ($flag) {
-
-                    if ($updateFlg > 0 && $mappingId > 0) {
                         $updCondi = " mapping_id=" . $mappingId . " and retailer_channel_id=". $retTypeId ." and item_id =". $item_id;
 
 
@@ -36891,20 +36879,22 @@ LEFT JOIN table_cases as cs ON cs.case_id = icr.case_id', "icr.item_id,cs.case_s
                         // print_r($data);die;
                         $this->_dbUpdate($data, 'table_retailer_channel_item_price_mapping', $updCondi);
 
-                
 
-                    return update;
-
-                    } else {
+                    }else{
+                      
                         $data['retailer_channel_id'] = $retTypeId;
                         $data['item_id'] = $item_id;
+                        $data['account_id'] = mysql_escape_string($_SESSION['accountId']);
                         $data['price'] = trim($arrFile[2]);
                         $data['status'] = 'A';
                         $data['created_at'] = date('Y-m-d H:i:s');
                         $data['updated_at'] = date('Y-m-d H:i:s');
                         $this->_dbInsert($data, 'table_retailer_channel_item_price_mapping');
                     }
+
                 }
+
+
 
             }
 
