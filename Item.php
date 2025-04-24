@@ -36895,17 +36895,6 @@ LEFT JOIN table_cases as cs ON cs.case_id = icr.case_id', "icr.item_id,cs.case_s
                 }
 
 
-                if ($flag) {
-
-                    if ($updateFlg > 0 && $mappingId > 0) {
-                       
-                
-
-                 //   return update;
-
-                    } else {  
-                    }
-                }
 
             }
 
