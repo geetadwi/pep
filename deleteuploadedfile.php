@@ -18,6 +18,17 @@ if($usersCount<1){
 echo '<div class="alert alert-danger" >Please select any value</div>';
 die;
 }
+
+$retRecc = $_objAdmin->_getSelectList2('table_discount_party as p left join table_retailer as r on r.retailer_id=p.retailer_id', "r.retailer_name, r.retailer_id", '', " p.discount_id='" . $_POST['discountid'] . "' and p.retailer_id>0");
+   
+$total_product=count($retRecc);
+
+if($usersCount==$total_product){
+
+    echo '<div class="alert alert-danger" >You cant remove all retailers. Please unselect any of the retailer</div>';
+    die;
+    }
+
 $List = implode(', ', $_POST["checkbox"]);
 
 
