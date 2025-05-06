@@ -2768,7 +2768,10 @@ LEFT JOIN table_salesman_hierarchy_relationship as shr ON shr.salesman_id = s.sa
     function removeDiscountRetailer($dis_id,$retailerid)
     {
         if($retailerid==0){
-            $this->mysql_query("DELETE FROM table_discount_party WHERE discount_id = $dis_id ");
+           
+             $retRecc = $this->_getSelectList2('table_discount_party as p left join table_retailer as r on r.retailer_id=p.retailer_id', "p.discount_party_id, r.retailer_id", '', " p.discount_id='" . $dis_id . "' and p.retailer_id>0");
+  
+            $this->mysql_query("DELETE FROM table_discount_party WHERE discount_id = $dis_id and discount_party_id!='".$retRecc[0]->discount_party_id."' ");
         }else{
         $this->mysql_query("DELETE FROM table_discount_party WHERE discount_id = $dis_id AND retailer_id IN ( $retailerid )");
         }

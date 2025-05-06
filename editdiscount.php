@@ -624,7 +624,7 @@ if ($check == false) {
                                  <!---- geeta code ---->
                              <span id="showmsg" style="display:none;color:green">Imported Successfully</span>
                              <!---- end geeta code ---->
-                                <input id="ret_list" class="ui-autocomplete-input form-control" autocomplete="off"
+                                <input id="ret_list" class="ui-autocomplete-input form-control" required autocomplete="off"
                                        role="textbox" aria-autocomplete="list" aria-haspopup="true" name="ret_list"
                                        placeholder="Search <?php echo $AliaseUsers['retailer']; ?> Name"
                                        value="<?php $retRec = $_objAdmin->_getSelectList2('table_discount_party as p left join table_retailer as r on r.retailer_id=p.retailer_id', "r.retailer_name", '', " p.discount_id='" . $auRec[0]->discount_id . "'");

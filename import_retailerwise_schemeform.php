@@ -75,7 +75,7 @@ $("#message-red").hide();
             cache: false,
             processData:false,
             beforeSend:function(){
-     return confirm("Are you sure you want to delete complete data?");
+     return confirm("You cant delete all the data. Are you sure you want to proceed?");
 },
             success: function(data)
             {
@@ -96,11 +96,12 @@ $("#message-red").hide();
 });
     </script>
 <div class="inner-container">
-<div id="message-greenshow" style="margin-bottom: 15px; display:none">
-                
-            </div>
+
             <?php  include("retailer/import_retailerwiseedit_scheme.php"); ?>
             <div class="inner-container">
+            <div id="message-greenshow" style="margin-bottom: 15px; display:none">
+                
+                </div>
 <form name="frmPre" id="frmPre" method="post" action="view_uploaded_retailerscheme.php" enctype="multipart/form-data">
    
     <?php 
