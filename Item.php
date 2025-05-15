@@ -38167,7 +38167,7 @@ function uploadCompetitorItemListFile()
 
                         $strErr .= "Error in Row"  . $row . " ," . $arrFile[0] . "," . $arrFile[1] . " ," .
                         $arrFile[2] . "," . $arrFile[3] . "," . $arrFile[4] . "," .
-                        $arrFile[5] . "," . $arrFile[6] . "," . $arrFile[7] .  ",Target name is already exits \n";
+                        $arrFile[5] . "," . $arrFile[6] . "," . $arrFile[7] .  ",Target name is already exitss \n";
 
                         $str_err_array = array($strErr);
 
@@ -38191,7 +38191,7 @@ function uploadCompetitorItemListFile()
 
                         $strErr .= "Error in Row"  . $row . " ," . $arrFile[0] . "," . $arrFile[1] . " ," .
                         $arrFile[2] . "," . $arrFile[3] . "," . $arrFile[4] . "," .
-                        $arrFile[5] . "," . $arrFile[6] . "," . $arrFile[7] .  ",Target name is already exits \n";
+                        $arrFile[5] . "," . $arrFile[6] . "," . $arrFile[7] .  ",Target name is already exitst \n";
 
                         $str_err_array = array($strErr);
 
@@ -38607,9 +38607,33 @@ function uploadCompetitorItemListFile()
 
                 if ($flag) {
 
-                    $condi = " description='" . mysql_escape_string(trim($arrFile[0])) . "' AND start_date = '" . $start_date . "' and end_date = '" . $end_date . "' ";
-
+                 //   $condi = " description='" . mysql_escape_string(trim($arrFile[0])) . "' AND start_date = '" . $start_date . "' and end_date = '" . $end_date . "' ";
+ $condi = " description='" . mysql_escape_string(trim($arrFile[0])) . "' AND primary_values!='" . mysql_escape_string(trim($target_value)) . "' AND start_date = '" . $start_date . "' and end_date = '" . $end_date . "' ";
                     $retTypeRec = $this->_getSelectList('table_target_incentive', "target_incentive_id", '', $condi);
+
+                    if (is_array($retTypeRec) && count($retTypeRec) > 0) {
+
+                        $strErr .= "Error in Row"  . $row . " ," . $arrFile[0] . "," . $arrFile[1] . " ," .
+                        $arrFile[2] . "," . $arrFile[3] . "," . $arrFile[4] . "," .
+                        $arrFile[5] . "," . $arrFile[6] . "," . $arrFile[7] .  ",Target name is already exits \n";
+
+                        $str_err_array = array($strErr);
+
+                        $flag = false;
+
+                    }
+
+                }
+
+                 if ($flag) {
+
+                     $condi = " d.description='" . mysql_escape_string(trim($arrFile[0])) . "' AND i.salesman_id='" . mysql_escape_string(trim($salesman_id)) . "' AND d.primary_values='" . mysql_escape_string(trim($target_value)) . "' AND d.start_date = '" . $start_date . "' and d.end_date = '" . $end_date . "' ";
+
+
+  $retTypeRec = $this->_getSelectList('table_target_incentive as d 
+				left join table_target_incentive_duration as r on r.target_incentive_id=d.target_incentive_id 
+                left join table_target_incentive_salesman as i on i.duration_id=r.duration_id ',
+                " d.target_incentive_id", '', $condi, '');
 
                     if (is_array($retTypeRec) && count($retTypeRec) > 0) {
 
@@ -39035,9 +39059,33 @@ function uploadCompetitorItemListFile()
 
                 if ($flag) {
 
-                    $condi = " description='" . mysql_escape_string(trim($arrFile[0])) . "' AND start_date = '" . $start_date . "' and end_date = '" . $end_date . "' ";
-
+                   // $condi = " description='" . mysql_escape_string(trim($arrFile[0])) . "' AND start_date = '" . $start_date . "' and end_date = '" . $end_date . "' ";
+ $condi = " description='" . mysql_escape_string(trim($arrFile[0])) . "' AND primary_values!='" . mysql_escape_string(trim($target_value)) . "' AND start_date = '" . $start_date . "' and end_date = '" . $end_date . "' ";
                     $retTypeRec = $this->_getSelectList('table_target_incentive', "target_incentive_id", '', $condi);
+
+                    if (is_array($retTypeRec) && count($retTypeRec) > 0) {
+
+                        $strErr .= "Error in Row"  . $row . " ," . $arrFile[0] . "," . $arrFile[1] . " ," .
+                        $arrFile[2] . "," . $arrFile[3] . "," . $arrFile[4] . "," .
+                        $arrFile[5] . "," . $arrFile[6] . "," . $arrFile[7] .  ",Target name is already exits \n";
+
+                        $str_err_array = array($strErr);
+
+                        $flag = false;
+
+                    }
+
+                }
+
+                 if ($flag) {
+
+                     $condi = " d.description='" . mysql_escape_string(trim($arrFile[0])) . "' AND i.salesman_id='" . mysql_escape_string(trim($salesman_id)) . "' AND d.primary_values='" . mysql_escape_string(trim($target_value)) . "' AND d.start_date = '" . $start_date . "' and d.end_date = '" . $end_date . "' ";
+
+
+  $retTypeRec = $this->_getSelectList('table_target_incentive as d 
+				left join table_target_incentive_duration as r on r.target_incentive_id=d.target_incentive_id 
+                left join table_target_incentive_salesman as i on i.duration_id=r.duration_id ',
+                " d.target_incentive_id", '', $condi, '');
 
                     if (is_array($retTypeRec) && count($retTypeRec) > 0) {
 
@@ -39431,8 +39479,8 @@ function uploadCompetitorItemListFile()
  
                  if ($flag) {
  
-                     $condi = " description='" . mysql_escape_string(trim($arrFile[0])) . "' AND start_date = '" . $start_date . "' and end_date = '" . $end_date . "' ";
- 
+                   //  $condi = " description='" . mysql_escape_string(trim($arrFile[0])) . "' AND start_date = '" . $start_date . "' and end_date = '" . $end_date . "' ";
+  $condi = " description='" . mysql_escape_string(trim($arrFile[0])) . "' AND primary_values!='" . mysql_escape_string(trim($target_value)) . "' AND start_date = '" . $start_date . "' and end_date = '" . $end_date . "' ";
                      $retTypeRec = $this->_getSelectList('table_target_incentive', "target_incentive_id", '', $condi);
  
                      if (is_array($retTypeRec) && count($retTypeRec) > 0) {
@@ -39448,6 +39496,30 @@ function uploadCompetitorItemListFile()
                      }
  
                  }
+
+                  if ($flag) {
+
+                     $condi = " d.description='" . mysql_escape_string(trim($arrFile[0])) . "' AND i.salesman_id='" . mysql_escape_string(trim($salesman_id)) . "' AND d.primary_values='" . mysql_escape_string(trim($target_value)) . "' AND d.start_date = '" . $start_date . "' and d.end_date = '" . $end_date . "' ";
+
+
+  $retTypeRec = $this->_getSelectList('table_target_incentive as d 
+				left join table_target_incentive_duration as r on r.target_incentive_id=d.target_incentive_id 
+                left join table_target_incentive_salesman as i on i.duration_id=r.duration_id ',
+                " d.target_incentive_id", '', $condi, '');
+
+                    if (is_array($retTypeRec) && count($retTypeRec) > 0) {
+
+                        $strErr .= "Error in Row"  . $row . " ," . $arrFile[0] . "," . $arrFile[1] . " ," .
+                        $arrFile[2] . "," . $arrFile[3] . "," . $arrFile[4] . "," .
+                        $arrFile[5] . "," . $arrFile[6] . "," . $arrFile[7] .  ",Target name is already exits \n";
+
+                        $str_err_array = array($strErr);
+
+                        $flag = false;
+
+                    }
+
+                }
  
  
                  if ($flag) {
@@ -39828,8 +39900,9 @@ function uploadCompetitorItemListFile()
   
                   if ($flag) {
   
-                      $condi = " description='" . mysql_escape_string(trim($arrFile[0])) . "' AND start_date = '" . $start_date . "' and end_date = '" . $end_date . "' ";
-  
+                    //  $condi = " description='" . mysql_escape_string(trim($arrFile[0])) . "' AND start_date = '" . $start_date . "' and end_date = '" . $end_date . "' ";
+    $condi = " description='" . mysql_escape_string(trim($arrFile[0])) . "' AND primary_values!='" . mysql_escape_string(trim($target_value)) . "' AND start_date = '" . $start_date . "' and end_date = '" . $end_date . "' ";
+
                       $retTypeRec = $this->_getSelectList('table_target_incentive', "target_incentive_id", '', $condi);
   
                       if (is_array($retTypeRec) && count($retTypeRec) > 0) {
@@ -39845,6 +39918,29 @@ function uploadCompetitorItemListFile()
                       }
   
                   }
+                   if ($flag) {
+
+                     $condi = " d.description='" . mysql_escape_string(trim($arrFile[0])) . "' AND i.salesman_id='" . mysql_escape_string(trim($salesman_id)) . "' AND d.primary_values='" . mysql_escape_string(trim($target_value)) . "' AND d.start_date = '" . $start_date . "' and d.end_date = '" . $end_date . "' ";
+
+
+  $retTypeRec = $this->_getSelectList('table_target_incentive as d 
+				left join table_target_incentive_duration as r on r.target_incentive_id=d.target_incentive_id 
+                left join table_target_incentive_salesman as i on i.duration_id=r.duration_id ',
+                " d.target_incentive_id", '', $condi, '');
+
+                    if (is_array($retTypeRec) && count($retTypeRec) > 0) {
+
+                        $strErr .= "Error in Row"  . $row . " ," . $arrFile[0] . "," . $arrFile[1] . " ," .
+                        $arrFile[2] . "," . $arrFile[3] . "," . $arrFile[4] . "," .
+                        $arrFile[5] . "," . $arrFile[6] . "," . $arrFile[7] .  ",Target name is already exits \n";
+
+                        $str_err_array = array($strErr);
+
+                        $flag = false;
+
+                    }
+
+                }
   
   
                   if ($flag) {
@@ -40221,7 +40317,8 @@ function uploadCompetitorItemListFile()
 
                 if ($flag) {
 
-                    $condi = " description='" . mysql_escape_string(trim($arrFile[0])) . "' AND start_date = '" . $start_date . "' and end_date = '" . $end_date . "' ";
+                  //  $condi = " description='" . mysql_escape_string(trim($arrFile[0])) . "' AND start_date = '" . $start_date . "' and end_date = '" . $end_date . "' ";
+  $condi = " description='" . mysql_escape_string(trim($arrFile[0])) . "' AND primary_values!='" . mysql_escape_string(trim($target_value)) . "' AND start_date = '" . $start_date . "' and end_date = '" . $end_date . "' ";
 
                     $retTypeRec = $this->_getSelectList('table_target_incentive', "target_incentive_id", '', $condi);
 
@@ -40238,6 +40335,31 @@ function uploadCompetitorItemListFile()
                     }
 
                 }
+
+                 if ($flag) {
+
+                     $condi = " d.description='" . mysql_escape_string(trim($arrFile[0])) . "' AND i.salesman_id='" . mysql_escape_string(trim($salesman_id)) . "' AND d.primary_values='" . mysql_escape_string(trim($target_value)) . "' AND d.start_date = '" . $start_date . "' and d.end_date = '" . $end_date . "' ";
+
+
+  $retTypeRec = $this->_getSelectList('table_target_incentive as d 
+				left join table_target_incentive_duration as r on r.target_incentive_id=d.target_incentive_id 
+                left join table_target_incentive_salesman as i on i.duration_id=r.duration_id ',
+                " d.target_incentive_id", '', $condi, '');
+
+                    if (is_array($retTypeRec) && count($retTypeRec) > 0) {
+
+                        $strErr .= "Error in Row"  . $row . " ," . $arrFile[0] . "," . $arrFile[1] . " ," .
+                        $arrFile[2] . "," . $arrFile[3] . "," . $arrFile[4] . "," .
+                        $arrFile[5] . "," . $arrFile[6] . "," . $arrFile[7] .  ",Target name is already exits \n";
+
+                        $str_err_array = array($strErr);
+
+                        $flag = false;
+
+                    }
+
+                }
+
 
 
                 if ($flag) {
@@ -40616,8 +40738,8 @@ function uploadCompetitorItemListFile()
  
                  if ($flag) {
  
-                     $condi = " description='" . mysql_escape_string(trim($arrFile[0])) . "' AND start_date = '" . $start_date . "' and end_date = '" . $end_date . "' ";
- 
+                   //  $condi = " description='" . mysql_escape_string(trim($arrFile[0])) . "' AND start_date = '" . $start_date . "' and end_date = '" . $end_date . "' ";
+   $condi = " description='" . mysql_escape_string(trim($arrFile[0])) . "' AND primary_values!='" . mysql_escape_string(trim($target_value)) . "' AND start_date = '" . $start_date . "' and end_date = '" . $end_date . "' ";
                      $retTypeRec = $this->_getSelectList('table_target_incentive', "target_incentive_id", '', $condi);
  
                      if (is_array($retTypeRec) && count($retTypeRec) > 0) {
@@ -40633,6 +40755,31 @@ function uploadCompetitorItemListFile()
                      }
  
                  }
+
+                  if ($flag) {
+
+                     $condi = " d.description='" . mysql_escape_string(trim($arrFile[0])) . "' AND i.salesman_id='" . mysql_escape_string(trim($salesman_id)) . "' AND d.primary_values='" . mysql_escape_string(trim($target_value)) . "' AND d.start_date = '" . $start_date . "' and d.end_date = '" . $end_date . "' ";
+
+
+  $retTypeRec = $this->_getSelectList('table_target_incentive as d 
+				left join table_target_incentive_duration as r on r.target_incentive_id=d.target_incentive_id 
+                left join table_target_incentive_salesman as i on i.duration_id=r.duration_id ',
+                " d.target_incentive_id", '', $condi, '');
+
+                    if (is_array($retTypeRec) && count($retTypeRec) > 0) {
+
+                        $strErr .= "Error in Row"  . $row . " ," . $arrFile[0] . "," . $arrFile[1] . " ," .
+                        $arrFile[2] . "," . $arrFile[3] . "," . $arrFile[4] . "," .
+                        $arrFile[5] . "," . $arrFile[6] . "," . $arrFile[7] .  ",Target name is already exits \n";
+
+                        $str_err_array = array($strErr);
+
+                        $flag = false;
+
+                    }
+
+                }
+
  
  
                  if ($flag) {
@@ -41045,9 +41192,33 @@ function uploadCompetitorItemListFile()
 
                 if ($flag) {
 
-                    $condi = " description='" . mysql_escape_string(trim($arrFile[0])) . "' AND start_date = '" . $start_date . "' and end_date = '" . $end_date . "' ";
-
+                   // $condi = " description='" . mysql_escape_string(trim($arrFile[0])) . "' AND start_date = '" . $start_date . "' and end_date = '" . $end_date . "' ";
+  $condi = " description='" . mysql_escape_string(trim($arrFile[0])) . "' AND primary_values!='" . mysql_escape_string(trim($target_value)) . "' AND start_date = '" . $start_date . "' and end_date = '" . $end_date . "' ";
                     $retTypeRec = $this->_getSelectList('table_target_incentive', "target_incentive_id", '', $condi);
+
+                    if (is_array($retTypeRec) && count($retTypeRec) > 0) {
+
+                        $strErr .= "Error in Row"  . $row . " ," . $arrFile[0] . "," . $arrFile[1] . " ," .
+                        $arrFile[2] . "," . $arrFile[3] . "," . $arrFile[4] . "," .
+                        $arrFile[5] . "," . $arrFile[6] . "," . $arrFile[7] .  ",Target name is already exits \n";
+
+                        $str_err_array = array($strErr);
+
+                        $flag = false;
+
+                    }
+
+                }
+
+                 if ($flag) {
+
+                     $condi = " d.description='" . mysql_escape_string(trim($arrFile[0])) . "' AND i.salesman_id='" . mysql_escape_string(trim($salesman_id)) . "' AND d.primary_values='" . mysql_escape_string(trim($target_value)) . "' AND d.start_date = '" . $start_date . "' and d.end_date = '" . $end_date . "' ";
+
+
+  $retTypeRec = $this->_getSelectList('table_target_incentive as d 
+				left join table_target_incentive_duration as r on r.target_incentive_id=d.target_incentive_id 
+                left join table_target_incentive_salesman as i on i.duration_id=r.duration_id ',
+                " d.target_incentive_id", '', $condi, '');
 
                     if (is_array($retTypeRec) && count($retTypeRec) > 0) {
 
