@@ -38167,7 +38167,7 @@ function uploadCompetitorItemListFile()
 
                         $strErr .= "Error in Row"  . $row . " ," . $arrFile[0] . "," . $arrFile[1] . " ," .
                         $arrFile[2] . "," . $arrFile[3] . "," . $arrFile[4] . "," .
-                        $arrFile[5] . "," . $arrFile[6] . "," . $arrFile[7] .  ",Target name is already exitss \n";
+                        $arrFile[5] . "," . $arrFile[6] . "," . $arrFile[7] .  ",Target name is already exits \n";
 
                         $str_err_array = array($strErr);
 
@@ -38191,7 +38191,7 @@ function uploadCompetitorItemListFile()
 
                         $strErr .= "Error in Row"  . $row . " ," . $arrFile[0] . "," . $arrFile[1] . " ," .
                         $arrFile[2] . "," . $arrFile[3] . "," . $arrFile[4] . "," .
-                        $arrFile[5] . "," . $arrFile[6] . "," . $arrFile[7] .  ",Target name is already exitst \n";
+                        $arrFile[5] . "," . $arrFile[6] . "," . $arrFile[7] .  ",Target name is already exits \n";
 
                         $str_err_array = array($strErr);
 
