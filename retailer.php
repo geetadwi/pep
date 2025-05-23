@@ -232,6 +232,8 @@ function showStateCity(str,id)
                 }elseif(isset ($_GET['import_address']) || $ret_err != '') {
                     header('Location:import_address.php');
 
+                }elseif (isset ($_GET['import']) || $cat_err != '') {
+                    include("retailer/import_retailer.php");
                 }else {
                     include("retailer/view_retailer.php");
                     unset($_SESSION['ret_err'], $_SESSION['retId'], $_SESSION['ret_login'], $_SESSION['update']);

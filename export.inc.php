@@ -496,36 +496,36 @@ if (isset($_GET['export_distributors_list'])) {
             $start_date = $_objAdmin->_changeDate($auRec[$i]->start_date);
             $end_date = $_objAdmin->_changeDate($auRec[$i]->end_date);
 
-            $data .= '"' . $auRec[$i]->distributor_code . '"';
+            $data .= '"' . trim($auRec[$i]->distributor_code) . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->distributor_name . '"';
+            $data .= '"' . trim($auRec[$i]->distributor_name) . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->distributor_phone_no . '"';
+            $data .= '"' . trim($auRec[$i]->distributor_phone_no) . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->distributor_phone_no2 . '"';
+            $data .= '"' . trim($auRec[$i]->distributor_phone_no2) . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->distributor_address . '"';
+            $data .= '"' . trim($auRec[$i]->distributor_address) . '"';
             $data .= "\t";
 
-            $data .= '"' . $auRec[$i]->country_name . '"';
+            $data .= '"' . trim($auRec[$i]->country_name) . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->zone_name . '"';
+            $data .= '"' . trim($auRec[$i]->zone_name) . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->state_name . '"';
+            $data .= '"' . trim($auRec[$i]->state_name) . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->city_name . '"';
+            $data .= '"' . trim($auRec[$i]->city_name) . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->location_name . '"';
+            $data .= '"' . trim($auRec[$i]->location_name) . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->dis_type_name . '"';
+            $data .= '"' . trim($auRec[$i]->dis_type_name) . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->username . '"';
+            $data .= '"' . trim($auRec[$i]->username) . '"';
             $data .= "\t";
             $data .= '"' . $surveyStatus . '"';
             $data .= "\t";
             $data .= '"' . $survey_approval_status . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->survey_remark . '"';
+            $data .= '"' . trim($auRec[$i]->survey_remark) . '"';
             $data .= "\t";
             $data .= '"' . $userType . '"';
             $data .= "\t";
@@ -710,23 +710,23 @@ if (isset($_GET['export_relailer_list'])) {
             }
             //Todo End : sudhanshu 17 jubne 2024 : survey approval status and remark
 
-            $data .= '"' . $auRec[$i]->retailer_code . '"';
+            $data .= '"' . trim($auRec[$i]->retailer_code) . '"';
             $data .= "\t";
             
-            $data .= '"' . $auRec[$i]->retailer_name . '"';
+            $data .= '"' . trim($auRec[$i]->retailer_name) . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->relationship_code . '"';
+            $data .= '"' . trim($auRec[$i]->relationship_code) . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->type_name . '"';
+            $data .= '"' . trim($auRec[$i]->type_name) . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->channel_name . '"';
+            $data .= '"' . trim($auRec[$i]->channel_name) . '"';
             $data .= "\t";
             $data .= '"' . $surveyStatus . '"';
             //Todo Start : sudhanshu 17 june 2024 : add survey approval status and survey remark
             $data .= "\t";
             $data .= '"' . $survey_approval_status . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->survey_remark . '"';
+            $data .= '"' . trim($auRec[$i]->survey_remark) . '"';
             $data .= "\t";
             $data .= '"' . $userType . '"';
             $data .= "\t";
@@ -738,33 +738,33 @@ if (isset($_GET['export_relailer_list'])) {
             $data .= '"' . $lng . '"';
             $data .= "\t";
            
-            $data .= '"' . $auRec[$i]->distributor_code . '"';
+            $data .= '"' . trim($auRec[$i]->distributor_code) . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->distributor_name . '"';
+            $data .= '"' . trim($auRec[$i]->distributor_name) . '"';
             $data .= "\t";
             $data .= '"' . $outlet . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->country_name . '"';
+            $data .= '"' . trim($auRec[$i]->country_name) . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->zone_name . '"';
+            $data .= '"' . trim($auRec[$i]->zone_name) . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->state_name . '"';
+            $data .= '"' . trim($auRec[$i]->state_name) . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->city_name . '"';
+            $data .= '"' . trim($auRec[$i]->city_name) . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->location_name . '"';
+            $data .= '"' . trim($auRec[$i]->location_name) . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->retailer_location . '"';
+            $data .= '"' . trim($auRec[$i]->retailer_location) . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->zipcode . '"';
+            $data .= '"' . trim($auRec[$i]->zipcode) . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->retailer_address . '"';
+            $data .= '"' . trim($auRec[$i]->retailer_address) . '"';
             $data .= "\t";
 //            $data .= '"' . $auRec[$i]->retailer_address2 . '"';
 //            $data .= "\t";
-            $data .= '"' . $auRec[$i]->retailer_phone_no . '"';
+            $data .= '"' . trim($auRec[$i]->retailer_phone_no) . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->retailer_phone_no2 . '"';
+            $data .= '"' . trim($auRec[$i]->retailer_phone_no2) . '"';
             $data .= "\t";
 //            $data .= '"' . $auRec[$i]->retailer_leadline_no . '"';
 //            $data .= "\t";
@@ -790,7 +790,7 @@ if (isset($_GET['export_relailer_list'])) {
             $data .= "\t";
             $data .= '"' . $anniversary_date . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->salesman_name . '"';
+            $data .= '"' . trim($auRec[$i]->salesman_name) . '"';
             $data .= "\t";
             $data .= '"' . $new . '"';
             $data .= "\t";
@@ -2339,14 +2339,14 @@ if (isset($_GET['order_wise_list'])) {
         $remove = array("\n", "\r");
         $data .= "" . $date_of_order . "\t" . $auRec[$i]->time_of_order . "\t" . $auRec[$i]->order_id . "\t" .
             $auRec[$i]->acc_total_invoice_amount . "\t" . $auRec2[0]->total_item . "\t" .
-            $auRec[$i]->distributor_name . "\t" . $auRec[$i]->distributor_code . "\t" . $auRec[$i]->dis_type_name . "\t" . $auRec[$i]->zone_name . "\t" .
-            $auRec[$i]->state_name . "\t" . $auRec[$i]->city_name . "\t" . $auRec[$i]->salesman_name . "\t" .
-            $auRec[$i]->employee_code . "\t" . $auRec[$i]->rpt_to . "\t" . $auRec[$i]->retailer_name . "\t" .
-            $auRec[$i]->retailer_code . "\t" . str_replace($remove, ' ', $auRec[$i]->retailer_location) . "\t" .
+            trim($auRec[$i]->distributor_name) . "\t" . trim($auRec[$i]->distributor_code) . "\t" . trim($auRec[$i]->dis_type_name) . "\t" . trim($auRec[$i]->zone_name) . "\t" .
+            trim($auRec[$i]->state_name) . "\t" . trim($auRec[$i]->city_name) . "\t" . trim($auRec[$i]->salesman_name) . "\t" .
+            trim($auRec[$i]->employee_code) . "\t" . $auRec[$i]->rpt_to . "\t" . trim($auRec[$i]->retailer_name) . "\t" .
+            trim($auRec[$i]->retailer_code) . "\t" . str_replace($remove, ' ', $auRec[$i]->retailer_location) . "\t" .
             $auRec[$i]->retailer_address . "\t" . $auRec[$i]->group_name . "\t" . $auRec[$i]->channel_name . "\t" . $auRec[$i]->relation . "\t" . $auRec[$i]->type_name . "\t" . $auRec[$i]->retailer_phone_no . "\t" . $outlet . "\t" . str_replace
             ($remove, ' ', $auRec[$i]->comments) . "\t" . str_replace($remove, ' ', $auRec[$i]->remarks) . "\t" .
             $auRec[$i]->tag_description . "\t" . $status . "\t" .
-            $order_by . "\t" . $auRec[$i]->item_name . "\t" . $auRec[$i]->item_code . "\t" . $auRec[$i]->grade_name . "\t" . $auRec[$i]->category_name . "\t" . $auRec[$i]->brand_name . "\t" . $uom . "\t" .
+            $order_by . "\t" . trim($auRec[$i]->item_name) . "\t" . trim($auRec[$i]->item_code) . "\t" . $auRec[$i]->grade_name . "\t" . $auRec[$i]->category_name . "\t" . $auRec[$i]->brand_name . "\t" . $uom . "\t" .
             $auRec[$i]->quantity
             . "\t" . $auRec[$i]->price . "\t" . $auRec[$i]->total . "\t" . $date_of_delivery . "\n";
 
@@ -15356,12 +15356,12 @@ if (isset($_GET['export_distributor_detail_order_listing'])) {
         }
         //Todo End : Sudhanshu 15 April : add cancel by column
 
-        $data .= $order_for . "\t" . $date_of_order . "\t" . $auRec[$i]->time_of_order . "\t" . $auRec[$i]->order_id . "\t" . $orderTakeBy . "\t" . $orderBy . "\t" . $orderStatus
+        $data .= trim($order_for) . "\t" . $date_of_order . "\t" . $auRec[$i]->time_of_order . "\t" . trim($auRec[$i]->order_id) . "\t" . trim($orderTakeBy) . "\t" . trim($orderBy) . "\t" . trim($orderStatus)
             . "\t" . $auRec[$i]->acc_total_invoice_amount . "\t" . $auRec2[0]->total_item . "\t" . str_replace
             ($remove, ' ', $auRec[$i]->stockist_name) . "\t" .
             str_replace($remove, ' ', $auRec[$i]->stockist_code) . "\t" .
             str_replace($remove, ' ', $auRec[$i]->distributor_name) . "\t" .
-            $auRec[$i]->distributor_code . "\t" . $auRec[$i]->salesman_name . "\t" . $auRec[$i]->state_name . "\t" . $auRec[$i]->city_name . "\t" . str_replace($remove, ' ', $auRec[$i]->distributor_location) . "\t" . str_replace($remove, ' ', $auRec[$i]->distributor_address) . "\t" . $status . "\t" . $cancelByUserType . "\t" . $cancel_by . "\t" . $auRec[$i]->comments . "\t" . $auRec[$i]->tag_description . "\t" . $auRec[$i]->category_name . "\t" . $auRec[$i]->category_code . "\t" . $auRec[$i]->item_name . "\t" . $auRec[$i]->item_code . "\t" . $auRec[$i]->quantity . "\t" . $auRec[$i]->price . "\t" . $auRec[$i]->total . "\n";
+            trim($auRec[$i]->distributor_code) . "\t" . trim($auRec[$i]->salesman_name) . "\t" . trim($auRec[$i]->state_name) . "\t" . trim($auRec[$i]->city_name) . "\t" . str_replace($remove, ' ', $auRec[$i]->distributor_location) . "\t" . str_replace($remove, ' ', $auRec[$i]->distributor_address) . "\t" . $status . "\t" . $cancelByUserType . "\t" . $cancel_by . "\t" . trim($auRec[$i]->comments) . "\t" . trim($auRec[$i]->tag_description) . "\t" . trim($auRec[$i]->category_name) . "\t" . trim($auRec[$i]->category_code) . "\t" . trim($auRec[$i]->item_name) . "\t" . trim($auRec[$i]->item_code) . "\t" . $auRec[$i]->quantity . "\t" . $auRec[$i]->price . "\t" . $auRec[$i]->total . "\n";
     }
     header("Content-type: application/octet-stream");
     header("Content-Disposition: attachment; filename=\"" . $AliaseUsers['distributor'] . " Detail Order List.xls\"");
@@ -28050,21 +28050,21 @@ left join table_location as loc ON loc.location_id = r.location_id ', "r.retaile
             $distStatus = (strtolower($auRec[$i]->status) == 'a') ? 'Active' : 'Inactive';
 
         
-            $data .= '"' . $auRec[$i]->retailer_code . '"';
+            $data .= '"' . trim($auRec[$i]->retailer_code) . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->retailer_name . '"';
+            $data .= '"' . trim($auRec[$i]->retailer_name) . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->retailer_phone_no . '"';
+            $data .= '"' . trim($auRec[$i]->retailer_phone_no) . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->state_name . '"';
+            $data .= '"' . trim($auRec[$i]->state_name) . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->city_name . '"';
+            $data .= '"' . trim($auRec[$i]->city_name) . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->location_name . '"';
+            $data .= '"' . trim($auRec[$i]->location_name) . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->address . '"';
+            $data .= '"' . trim($auRec[$i]->address) . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->zipcode . '"';
+            $data .= '"' . trim($auRec[$i]->zipcode) . '"';
             $data .= "\t";
             $data .= '"' . $distStatus . '"';
             $data .= "\n";
@@ -28087,21 +28087,21 @@ left join table_location as loc ON loc.location_id = d.location ', "d.distributo
         for ($i = 0; $i < count($auRec); $i++) {
             $distStatus = (strtolower($auRec[$i]->status) == 'a') ? 'Active' : 'Inactive';
 
-            $data .= '"' . $auRec[$i]->distributor_name . '"';
+            $data .= '"' . trim($auRec[$i]->distributor_name) . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->distributor_code . '"';
+            $data .= '"' . trim($auRec[$i]->distributor_code) . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->distributor_phone_no . '"';
+            $data .= '"' . trim($auRec[$i]->distributor_phone_no) . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->state_name . '"';
+            $data .= '"' . trim($auRec[$i]->state_name) . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->city_name . '"';
+            $data .= '"' . trim($auRec[$i]->city_name) . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->location_name . '"';
+            $data .= '"' . trim($auRec[$i]->location_name) . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->address . '"';
+            $data .= '"' . trim($auRec[$i]->address) . '"';
             $data .= "\t";
-            $data .= '"' . $auRec[$i]->zipcode . '"';
+            $data .= '"' . trim($auRec[$i]->zipcode) . '"';
             $data .= "\t";
             $data .= '"' . $distStatus . '"';
             $data .= "\n";
