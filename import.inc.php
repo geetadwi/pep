@@ -163,6 +163,7 @@ if (isset($_POST['distributor_import_csv']) && $_POST['distributor_import_csv'] 
 if (isset($_POST['distributor_import']) && $_POST['distributor_import'] == 'yes') {
     if (isset($_FILES['fileToUpload']['tmp_name']) && $_FILES['fileToUpload']['tmp_name'] != "") {
         $ret = $_objItem->uploadDistributorFile();
+        
         if ($ret == '') {
             $msg = "Data has been successfully imported";
         } elseif ($ret == 'no') {

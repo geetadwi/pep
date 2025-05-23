@@ -149,6 +149,8 @@ function showStateCity(str,id)
                     header('Location:import_update_distributor.php');
                 }elseif(isset ($_GET['import_address']) || $dis_err != ''){
                     header('Location:import_distributor_address.php');
+                }elseif (isset ($_GET['import']) || $cat_err != '') {
+                    include("distributors/import_distributor.php");
                 } else {
                     include("distributors/view_distributors.php");
                     unset($_SESSION['dis_err'], $_SESSION['disId'], $_SESSION['dis_login'], $_SESSION['update']);
